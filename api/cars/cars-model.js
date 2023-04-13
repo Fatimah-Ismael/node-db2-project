@@ -1,9 +1,18 @@
+const knex = require('knex')
+const db = knex({
+  client: 'sqlite3', 
+  connection: {
+  
+  }
+})
+
 const getAll = () => {
-  // DO YOUR MAGIC
+  return db('cars')
 }
 
-const getById = () => {
+const getById = (id) => {
   // DO YOUR MAGIC
+  return db('cars').where('id', id).first()
 }
 
 const create = () => {
